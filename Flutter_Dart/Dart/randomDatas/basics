@@ -1,0 +1,82 @@
+void main() {
+  String a = "Hallo";
+  String b = "Welt";
+  print(a + "\u1175" * 5 + b);
+  print("\n");
+
+  int x = 5;
+  print("x = $x");
+  print("x = ${++x}");
+  print("x = $x");
+  print("\n");
+
+  int y = 0;
+  y += x;
+  print("x = $x, y = $y");
+  print("\n");
+
+  num z = 2;
+  int zz = 3;
+  double zzz = 0.5;
+  print(zz + zzz + z);
+  var v = zzz;
+  print("${v.runtimeType}");
+  print("\n");
+
+  print('"Hallo", hat er gesagt');
+  print("'Hallo', hat er gesagt");
+  print("Bob's Auto");
+  print(r"Das kostet $10 - weiterer Quatsch: $&%");
+  print("\n");
+
+  Map<int, String> myMap;
+  myMap = {1: "k",0:"w"};
+  print(myMap);
+  myMap.forEach((key, value) => print(value),);
+  print("\n");
+  
+  Set<int> mySet = {1,3,4};
+  print("\n");
+  
+  Symbol libName = #foo_lib;
+  print(libName);
+  var clasName = #foo;
+  print(clasName);
+  print('I \u2764 Dart\u0021');
+  print("\n");
+  
+  
+  const myInteger = 10;
+  const myDouble = 3.14;
+  int myIntegerInt = myInteger;
+  print(myInteger/3);
+  var doubleNum = 20.5; 
+  var intNum = doubleNum;
+  
+  var intNum2 = 1;
+  var doubleNum2 = intNum;
+  
+  String bString = '';  // leerer String
+  
+  if (bString == '') {
+    print(r"bString = \n");
+  }
+  print("\n");
+  
+  void showInfoOptionalParameters(String vorname, [String? nachname, String? ort, int? alter, bool? istOnline]) {
+    if (vorname != null) {  // später eine Kuzform für Null-Check
+      print('Vorname: $vorname');
+    }
+    // NUR Daten anzeigen, deren Nachname vorhanden ist
+    if (nachname != null) {  // später eine Kuzform für Null-Check
+      print('Nachname: $nachname');
+    }
+
+    if (alter != null) {
+      print('Alter: $alter');
+    }
+  }
+  
+  showInfoOptionalParameters("Moses", null, null, 36, false);
+  print("\n");
+}
